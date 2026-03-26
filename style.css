@@ -70,6 +70,32 @@ body {
     overflow-x: hidden;
 }
 
+@media screen and (max-width: 600px) {
+    #header_links {
+        margin-left: 0%;
+        display: flex;
+        gap: 2vw;
+        padding-left: 7.5%;
+        padding-top: 6%;
+    }
+
+    a {
+        padding-left: 0%;
+        margin-left: 0%;
+        font-size: 18px;
+    }
+
+    #heading_left {
+        padding-left: 0%;
+    }
+
+    #header {
+        margin-left: 0%;
+        height: 10vh;
+    }
+
+}
+
 /* #endregion */
 
 /* #region HOME PAGE STYLING */
