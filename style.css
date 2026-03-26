@@ -1,0 +1,432 @@
+/* #region GLOBAL STYLING. Nav bar, backgrounds, etc */
+
+html {
+    background-color: cornflowerblue;
+    font-family: "Barlow Condensed", sans-serif !important;
+    scrollbar-color: white;
+}
+
+body {
+    margin: 0%;
+}
+
+#header {
+    margin: 0%;
+    background-color: rgb(57, 109, 207);
+    backdrop-filter: blur(100%);
+    width: 100%;
+    height: 13vh;
+    border: none;
+}
+
+#header_links {
+    display: flex;
+    gap: 16%;
+    padding-left: 10%;
+    padding-top: 2.5%;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+#border-sides {
+    position: fixed;
+    z-index: -1;
+    height: 99.2vh;
+    width: 99.2vw;
+    border-right: 5px rgb(57, 109, 207) solid;
+    border-left: 5px rgb(57, 109, 207) solid;
+    border-top: 0px;
+    border-bottom: 5px rgb(57, 109, 207) solid;
+}
+
+a:hover {
+    text-decoration: solid underline;
+    text-underline-offset: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(57, 109, 207);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(57, 109, 207);
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+/* #endregion */
+
+/* #region HOME PAGE STYLING */
+
+/* Text */
+#text {
+    margin-left: 5%;
+    color: white;
+    width: 650px;
+}
+
+#text h1 {
+    margin-top: 10%;
+    font-size: 44px;
+    text-decoration: solid underline;
+    text-underline-offset: 50%;
+}
+
+#body {
+    display: flex;
+    gap: 7%;
+}
+
+h2 {
+    color: white;
+    font-weight: normal;
+}
+
+/* Gradients */
+
+#gradients h2 {
+    margin-top: 7% !important;
+    font-weight: normal;
+}
+
+#gradients {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5.5%;
+}
+
+#gExamples {
+    display: flex;
+    gap: 7%;
+}
+
+#eg1 {
+    flex-shrink: 0;
+    height: 100px;
+    width: 75px;
+    background-image: linear-gradient(to right, #cd4da1, #ae8cf3, #64c5ff, #00f6ff);
+}
+
+#eg2 {
+    flex-shrink: 0;
+    height: 100px;
+    width: 75px;
+    background-image: linear-gradient(to right, #a14dcd, #be68ea, #dc84ff, #fba0ff);
+}
+
+#eg3 {
+    flex-shrink: 0;
+    height: 100px;
+    width: 75px;
+    background-image: linear-gradient(to right, #efbf07, #ffc2b0, #fd8b7b, #c0564a);
+}
+
+#eg4 {
+    flex-shrink: 0;
+    height: 100px;
+    width: 75px;
+    background-image: linear-gradient(to right, #46bcf8, #7ef9c1, #41c08b, #008a59);
+}
+
+#examples {
+    margin-top: 4%;
+    margin-left: 6%;
+}
+
+/* Example images */
+
+#flowerExamples {
+    display: flex;
+    gap: 7%;
+}
+
+#objectsExamples {
+    display: flex;
+    gap: 7%;
+}
+
+#texturesExamples {
+    display: flex;
+    gap: 7%;
+}
+
+.flowers {
+    flex-shrink: 0;
+    height: 100px;
+    width: 75px;
+}
+
+.textures {
+    flex-shrink: 0;
+    height: 100px;
+    width: 75px;
+}
+
+.objects {
+    flex-shrink: 0;
+    height: 100px;
+    width: 75px;
+}
+
+/* Try Button */
+
+#tryButton {
+    flex-shrink: 0;
+    margin-left: 10%;
+    margin-top: 2%;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    font-size: 13px;
+    border: none;
+    outline: none;
+    background-color: dodgerblue;
+    color: white;
+}
+
+#tryButton:hover {
+    border: rgb(0, 111, 223) 5px solid;
+    height: 100px;
+    width: 100px;
+    margin-left: 8%;
+    margin-top: 0%;
+}
+
+/* #endregion Home page complete */
+
+/* #region Gradients page styling */
+
+#searchBarGradients {
+    /*Combined*/
+    display: flex;
+    width: fit-content;
+    margin-top: 5%;
+    margin-left: 43%;
+    align-items: top;
+    justify-content: top;
+    vertical-align: top;
+}
+
+#colourChoose {
+    /*Input type colour*/
+    height: 48px;
+    width: 48px;
+    border: none;
+    outline: none;
+    padding: 0;
+    background: none;
+    margin: none;
+    box-shadow: none;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#colourChoose::-webkit-color-swatch {
+    border: none;
+}
+
+#colourChoose::-moz-color-swatch {
+    border: none;
+}
+
+#colourChoose::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+#colourWrite {
+    /*Input type text*/
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    outline: none;
+    border: none;
+    margin: none;
+    height: 46px;
+    width: 120px;
+    padding-left: 10px;
+}
+
+.created {
+    /*JS Created Gradient swatches*/
+    height: 75px;
+    width: 75px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+}
+
+/* Main div for gradient swatches divs */
+
+#gradientsDiv {
+    margin-top: 1%;
+    margin-left: 3%;
+    display: flex;
+    gap: 10%;
+}
+
+/* Divs for gradient swatches */
+
+#monochrome {
+    margin-left: 0%;
+    color: white;
+}
+
+
+#analogous {
+    margin-left: 0%;
+    color: white;
+}
+
+
+#complementary {
+    margin-left: 0%;
+    color: white;
+}
+
+
+#shades {
+    margin-left: 0%;
+    color: white;
+}
+
+
+#tint {
+    margin-left: 0%;
+    color: white;
+}
+
+
+#sunset {
+    margin-left: 0%;
+    color: white;
+}
+
+
+/* The thing in which the colours are stored */
+
+
+#coloursmono {
+    margin: none;
+    display: flex;
+    gap: 0.2%;
+}
+
+#coloursana {
+    margin: none;
+    display: flex;
+    gap: 0.2%;
+}
+
+#colourscomp {
+    margin: none;
+    display: flex;
+    gap: 0.2%;
+}
+
+#colourssha {
+    margin: none;
+    display: flex;
+    gap: 0.2%;
+}
+
+#colourstint {
+    margin: none;
+    display: flex;
+    gap: 0.2%;
+}
+
+
+#colourssun {
+    margin: none;
+    display: flex;
+    gap: 0.2%;
+}
+
+/* The main display gradients */
+
+#gradientsforpage {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 3%;
+}
+
+.gradient-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+}
+
+.gradient-box h2 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.gradient-bar {
+    height: 100px;
+    width: 75px;
+}
+
+/* #endregion Gradients page completed  */
+
+/* #region Used for last 3 pages:  */
+
+.search-bar {
+    margin-left: 40%;
+    width: 250px;
+    height: 30px;
+    margin-top: 3%;
+    border: none;
+    padding-left: 8px;
+    font-size: 15px;
+}
+
+.search-bar:active {
+    outline: none;
+}
+
+.search-bar:hover {
+    outline: none;
+}
+
+.search-bar:focus {
+    outline: none;
+}
+
+#pictures {
+    margin-top: 4%;
+    margin-left: 3%;
+}
+
+#place {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px 100px;
+    gap: 8em;
+    margin-bottom: 10%;
+}
+
+.images {
+    height: 150px;
+    width: 110px;
+}
+
+/* #endregion Last 3 pages completed*/
