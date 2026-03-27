@@ -68,7 +68,7 @@ a:hover {
 }
 
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) {
     #header_links {
         margin-left: 0%;
         display: flex;
