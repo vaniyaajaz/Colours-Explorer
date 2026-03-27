@@ -112,6 +112,7 @@ function finder(x) {
         notFound.textContent = "'" + x + "' not found. Try browsing '" + random + "' instead:"
         notFound.style.marginBottom = "2%"
         notFound.style.marginTop = "2%"
+        notFound.style.marginLeft = "2%"
         notFound.style.color = "white"
         container.appendChild(notFound)
         create(random)
