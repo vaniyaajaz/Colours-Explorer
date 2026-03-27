@@ -317,7 +317,7 @@ h2 {
 
 #tryButton {
     flex-shrink: 0;
-    margin-top: 26%;
+    margin-top: 0%;
     height: 80px;
     width: 80px;
     border-radius: 50% !important;
@@ -326,7 +326,7 @@ h2 {
     outline: none;
     background-color: dodgerblue;
     color: white;
-    margin-left: -10%;
+    margin-left: 0%;
     margin-right: 0% !important;
     margin-bottom: 0% !important;
 }
