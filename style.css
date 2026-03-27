@@ -4,10 +4,12 @@ html {
     background-color: cornflowerblue;
     font-family: "Barlow Condensed", sans-serif !important;
     scrollbar-color: white;
+    width: 100%;
 }
 
 body {
     margin: 0%;
+    width: 100%;
 }
 
 #header {
@@ -32,15 +34,15 @@ a {
     font-size: 20px;
 }
 
-#border-sides {
+#border-left {
     position: fixed;
     z-index: -1;
-    height: 99.2vh;
-    width: 99.2vw;
-    border-right: 5px rgb(57, 109, 207) solid;
+    height: 99.3;
+    width: 0px;
     border-left: 5px rgb(57, 109, 207) solid;
+    border-left: 0px;
     border-top: 0px;
-    border-bottom: 5px rgb(57, 109, 207) solid;
+    border-bottom: 0px;
 }
 
 a:hover {
@@ -54,7 +56,7 @@ a:hover {
 }
 
 ::-webkit-scrollbar-track {
-    background: #1e1e1e;
+    background: rgb(57, 109, 207);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -65,24 +67,19 @@ a:hover {
     background: rgb(57, 109, 207);
 }
 
-html,
-body {
-    overflow-x: hidden;
-}
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
     #header_links {
         margin-left: 0%;
         display: flex;
-        gap: 2vw;
-        padding-left: 7.5%;
-        padding-top: 6%;
+        gap: 5vw;
+        padding-top: 3vh;
     }
 
     a {
         padding-left: 0%;
-        margin-left: 0%;
-        font-size: 18px;
+        margin-left: -3%;
+        font-size: 110%;
     }
 
     #heading_left {
@@ -92,6 +89,112 @@ body {
     #header {
         margin-left: 0%;
         height: 10vh;
+        width: 100vw;
+    }
+
+    #text {
+        margin-left: 4vw !important;
+        margin-top: 2vh !important;
+        width: 90vw !important;
+    }
+
+    #text h1 {
+        margin-top: 3% !important;
+        font-size: 150% !important;
+        margin-bottom: 4%;
+        text-underline-offset: 30% !important;
+    }
+
+    #examples {
+        margin-left: 4vw !important;
+    }
+
+    #body {
+        flex-direction: column;
+        gap: 0%;
+    }
+
+    h2 {
+        font-size: 120% !important;
+    }
+
+    #gExamples {
+        display: flex;
+        gap: 3vw !important;
+    }
+
+    #eg1 {
+        flex-shrink: 0;
+        height: 50% !important;
+        aspect-ratio: 10/ 13 !important;
+        background-image: linear-gradient(to right, #cd4da1, #ae8cf3, #64c5ff, #00f6ff);
+    }
+
+    #eg2 {
+        flex-shrink: 0;
+        height: 50% !important;
+        aspect-ratio: 10/ 13 !important;
+        background-image: linear-gradient(to right, #a14dcd, #be68ea, #dc84ff, #fba0ff);
+    }
+
+    #eg3 {
+        flex-shrink: 0;
+        height: 50% !important;
+        aspect-ratio: 10/ 13 !important;
+        background-image: linear-gradient(to right, #efbf07, #ffc2b0, #fd8b7b, #c0564a);
+    }
+
+    #eg4 {
+        flex-shrink: 0;
+        height: 50% !important;
+        aspect-ratio: 10/ 13 !important;
+        background-image: linear-gradient(to right, #46bcf8, #7ef9c1, #41c08b, #008a59);
+    }
+
+    p {
+        font-size: 100%;
+    }
+
+    #tryButton {
+        height: 80px !important;
+        width: 80px !important;
+        font-size: 130% !important;
+        margin-left: 40% !important;
+        margin-right: 0% !important;
+        margin-top: 10% !important;
+        margin-bottom: -3% !important;
+    }
+
+    .flowers {
+        margin-top: 0%;
+        flex-shrink: 0;
+        height: 50% !important;
+        aspect-ratio: 10/ 13 !important;
+    }
+
+    .objects {
+        flex-shrink: 0;
+        height: 50% !important;
+        aspect-ratio: 10/ 13 !important;
+    }
+
+    .textures {
+        flex-shrink: 0;
+        height: 50% !important;
+        aspect-ratio: 10/ 13 !important;
+        margin-bottom: 5% !important;
+    }
+
+    #flowerExamples {
+        gap: 3vw !important;
+    }
+
+    #objectsExamples {
+        gap: 3vw !important;
+    }
+
+    #texturesExamples {
+        gap: 3vw !important;
     }
 
 }
@@ -214,24 +317,22 @@ h2 {
 
 #tryButton {
     flex-shrink: 0;
-    margin-left: 10%;
-    margin-top: 2%;
+    margin-top: 26%;
     height: 80px;
     width: 80px;
-    border-radius: 50%;
-    font-size: 13px;
+    border-radius: 50% !important;
+    font-size: 13px !important;
     border: none;
     outline: none;
     background-color: dodgerblue;
     color: white;
+    margin-left: -10%;
+    margin-right: 0% !important;
+    margin-bottom: 0% !important;
 }
 
 #tryButton:hover {
     border: rgb(0, 111, 223) 5px solid;
-    height: 100px;
-    width: 100px;
-    margin-left: 8%;
-    margin-top: 0%;
 }
 
 /* #endregion Home page complete */
