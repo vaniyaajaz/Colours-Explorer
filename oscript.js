@@ -105,6 +105,15 @@ function finder(x) {
             console.log(x)
             create(x)
         }
+    } else {
+        const notFound = document.createElement('p')
+        let index = Math.floor(Math.random() * 24)
+        let random = acceptableColours[index]
+        notFound.textContent = "'" + x + "' not found. Try browsing '" + random + "' instead:"
+        notFound.style.marginBottom = "2%"
+        notFound.style.marginTop = "2%"
+        container.appendChild(notFound)
+        create(random)
     }
 }
 
