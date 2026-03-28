@@ -514,7 +514,7 @@ function checkAndCall(givenValue) {
 }
 
 window.addEventListener("keydown", (e) => {
-    const input = document.getElementById("searchBar")
+    const input = document.getElementById("searchBarGradients")
     if (e.code === "Space" && !input.focus()) {
         e.preventDefault()
         let bgMusic = document.getElementById("backgroundMusic")
