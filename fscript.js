@@ -14,7 +14,22 @@ let search = ""
 // #region Startup
 let index = Math.floor(Math.random() * acceptableColours.length)
 search = acceptableColours[index]
+search = normalise(search)
 finder(search)
+
+let music = sessionStorage.getItem("music")
+if (music = "true") {
+    let bgMusic = new Audio
+    bgMusic.src = "music/bgMusic.mp3"
+    bgMusic.id = "backgroundMusic"
+    bgMusic.loop = true
+    let startTime = sessionStorage.getItem("MusicTime")
+    console.log(startTime)
+    bgMusic.currentTime = startTime || 0
+    bgMusic.volume = 0.4
+    document.body.appendChild(bgMusic)
+    bgMusic.play()
+}
 
 
 current.addEventListener('click', (e) => {
@@ -40,7 +55,6 @@ form.addEventListener('submit', (e) => {
 // #region Image finder
 function finder(x) {
     if (acceptableColours.includes(x)) {
-        console.log("found")
         create(x)
     } else if (x === "red") {
         let options = ["light", "bright"]
@@ -112,10 +126,9 @@ function finder(x) {
         notFound.textContent = "'" + x + "' not found. Try browsing '" + random + "' instead:"
         notFound.style.marginBottom = "2%"
         notFound.style.marginTop = "2%"
-        notFound.style.marginLeft = "2%"
+        notFound.style.marginLeft = "4%"
         notFound.style.color = "white"
         container.appendChild(notFound)
-        random = normalise(random)
         create(random)
     }
 }
@@ -205,6 +218,23 @@ function create(x) {
         img.src = folder + x + "/" + i + ".jpg"
         div.appendChild(img)
         img.className = "images"
+    }
+    console.log("made")
+}
+
+const links = document.querySelectorAll("a")
+links.forEach(link => {
+    saveDataToSessionStorage();
+})
+window.addEventListener('beforeunload', () => {
+    saveDataToSessionStorage();
+});
+
+function saveDataToSessionStorage() {
+    let bgMusic = document.getElementById("backgroundMusic")
+    if (bgMusic) {
+        let stopTime = bgMusic.currentTime
+        sessionStorage.setItem("MusicTime", stopTime)
     }
 }
 
