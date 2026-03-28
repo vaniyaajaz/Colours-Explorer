@@ -16,6 +16,20 @@ let index = Math.floor(Math.random() * acceptableColours.length)
 search = acceptableColours[index]
 finder(search)
 
+let music = sessionStorage.getItem("music")
+if (music = "true") {
+    let bgMusic = new Audio
+    bgMusic.src = "music/bgMusic.mp3"
+    bgMusic.id = "backgroundMusic"
+    bgMusic.loop = true
+    let startTime = sessionStorage.getItem("MusicTime")
+    console.log(startTime)
+    bgMusic.currentTime = startTime || 0
+    bgMusic.volume = 0.4
+    document.body.appendChild(bgMusic)
+    bgMusic.play()
+}
+
 
 current.addEventListener('click', (e) => {
     e.preventDefault()
@@ -112,10 +126,9 @@ function finder(x) {
         notFound.textContent = "'" + x + "' not found. Try browsing '" + random + "' instead:"
         notFound.style.marginBottom = "2%"
         notFound.style.marginTop = "2%"
-        notFound.style.marginLeft = "2%"
+        notFound.style.marginLeft = "4%"
         notFound.style.color = "white"
         container.appendChild(notFound)
-        random = normalise(random)
         create(random)
     }
 }
@@ -148,7 +161,7 @@ function hexToHSL(hex) {
 function classifyColor(hex) {
     const { h, s, l } = hexToHSL(hex);
     if (s < 10) {
-        if (l > 95) return "white";
+        if (l > 95) return "white"
         if (l < 15) return "black";
         if (l > 75) return "silver";
         if (l > 35) return "grey";
@@ -207,6 +220,22 @@ function create(x) {
         img.className = "images"
     }
     console.log("made")
+}
+
+const links = document.querySelectorAll("a")
+links.forEach(link => {
+    saveDataToSessionStorage();
+})
+window.addEventListener('beforeunload', () => {
+    saveDataToSessionStorage();
+});
+
+function saveDataToSessionStorage() {
+    let bgMusic = document.getElementById("backgroundMusic")
+    if (bgMusic) {
+        let stopTime = bgMusic.currentTime
+        sessionStorage.setItem("MusicTime", stopTime)
+    }
 }
 
 // #endregion
