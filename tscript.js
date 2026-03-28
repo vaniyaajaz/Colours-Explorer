@@ -135,7 +135,7 @@ function finder(x) {
         }
     } else if (x === "purple") {
         let options = ["light", "bright", "dark"]
-        for (let i = 0; i <= 3; i++) {
+        for (let i = 0; i <= 2; i++) {
             let shade = options[i]
             x = shade + "purple"
             console.log(x)
