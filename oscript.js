@@ -158,6 +158,7 @@ function finder(x) {
         notFound.style.marginLeft = "4%"
         notFound.style.color = "white"
         container.appendChild(notFound)
+        random = normalise(random)
         create(random)
     }
 }
