@@ -111,7 +111,7 @@ function finder(x) {
         }
     } else if (x === "green") {
         let options = ["light", "bright", "dark"]
-        for (let i = 0; i <= 1; i++) {
+        for (let i = 0; i <= 2; i++) {
             let shade = options[i]
             x = shade + "green"
             console.log(x)
@@ -119,7 +119,7 @@ function finder(x) {
         }
     } else if (x === "blue") {
         let options = ["light", "bright", "dark"]
-        for (let i = 0; i <= 1; i++) {
+        for (let i = 0; i <= 2; i++) {
             let shade = options[i]
             x = shade + "blue"
             console.log(x)
@@ -127,7 +127,7 @@ function finder(x) {
         }
     } else if (x === "pink") {
         let options = ["light", "bright", "dark"]
-        for (let i = 0; i <= 1; i++) {
+        for (let i = 0; i <= 2; i++) {
             let shade = options[i]
             x = shade + "pink"
             console.log(x)
@@ -135,7 +135,7 @@ function finder(x) {
         }
     } else if (x === "purple") {
         let options = ["light", "bright", "dark"]
-        for (let i = 0; i <= 1; i++) {
+        for (let i = 0; i <= 3; i++) {
             let shade = options[i]
             x = shade + "purple"
             console.log(x)
@@ -216,6 +216,7 @@ function classifyColor(hex) {
 function normalise(search) {
     if (search === "gray" || search === "silver") {
         search = "grey"
+        console.log("silver turned to grey")
     } else if (search === "magenta") {
         search = "darkpink"
     } else if (search === "cream") {
@@ -240,6 +241,7 @@ function normalise(search) {
 }
 
 function create(x) {
+    normalise(x)
     const div = document.createElement("div")
     div.id = "place"
     container.appendChild(div)
