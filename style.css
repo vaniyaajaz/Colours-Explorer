@@ -197,6 +197,41 @@ a:hover {
         gap: 3vw !important;
     }
 
+    #popup {
+    display: flex;
+    height: 26% !important;
+    width: 70% !important;
+    position: absolute;
+    top: 37%;
+    left: 15% !important;
+    place-items: center;
+    flex-direction: column;
+    border: rgb(43, 109, 230) 5px solid;
+}
+
+#music_question {
+    padding-left: 20px !important;
+    font-size: 30px !important;
+    color: rgb(43, 109, 230)
+}
+
+#popupButtons {
+    margin-top: 7%;
+    display: flex;
+    gap: 20%;
+
+}
+
+#popupButtons button {
+    background-color: rgb(43, 109, 230);
+    border: none;
+    outline: none;
+    color: white;
+    height: 40px !important;
+    width: 110px !important;
+    font-size: 20px;
+}
+
 }
 
 /* #endregion */
