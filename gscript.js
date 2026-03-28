@@ -514,7 +514,9 @@ function checkAndCall(givenValue) {
 }
 
 window.addEventListener("keydown", (e) => {
-    if (e.code = "Space") {
+    const input = document.getElementById("searchBar")
+    if (e.code === "Space" && !input.focus()) {
+        e.preventDefault()
         let bgMusic = document.getElementById("backgroundMusic")
         if (bgMusic) {
             if (!bgMusic.paused) {
@@ -536,7 +538,6 @@ window.addEventListener("keydown", (e) => {
         }
     }
 })
-
 const links = document.querySelectorAll("a")
 links.forEach(link => {
     saveDataToSessionStorage();
