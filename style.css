@@ -227,6 +227,40 @@ h2 {
     font-weight: normal;
 }
 
+#popup {
+    display: flex;
+    height: 26%;
+    width: 26%;
+    position: absolute;
+    top: 37%;
+    left: 37%;
+    place-items: center;
+    flex-direction: column;
+    border: rgb(43, 109, 230) 5px solid;
+}
+
+#music_question {
+    padding-left: 40px;
+    font-size: 25px;
+    color: rgb(43, 109, 230)
+}
+
+#popupButtons {
+    margin-top: 7%;
+    display: flex;
+    gap: 20%;
+
+}
+
+#popupButtons button {
+    background-color: rgb(43, 109, 230);
+    border: none;
+    outline: none;
+    color: white;
+    height: 30px;
+    width: 100px
+}
+
 /* Gradients */
 
 #gradients h2 {
