@@ -24,8 +24,11 @@ if (music = "true") {
     bgMusic.id = "backgroundMusic"
     bgMusic.loop = true
     let startTime = sessionStorage.getItem("MusicTime")
-    console.log(startTime)
-    bgMusic.currentTime = startTime || 0
+    if (startTime) {
+        bgMusic.currentTime = startTime
+    } else {
+        bgMusic.currentTime = 0
+    }
     bgMusic.volume = 0.4
     document.body.appendChild(bgMusic)
     bgMusic.play()
