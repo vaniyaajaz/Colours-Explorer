@@ -29,3 +29,106 @@ button.addEventListener('click', () => {
     window.location.href = "gradients.html"
 })
 // #endregion
+
+// #region Music
+let musical = sessionStorage.getItem("music")
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (!musical) {
+        const popup = document.createElement("form")
+        popup.id = "popup"
+        popup.style.backgroundColor = "white"
+        popup.style.borderRadius = "20px"
+        popup.style.zIndex = "10"
+        popup.style.display = "flex"
+        const question = document.createElement("h1")
+        question.textContent = "Would you like the musical experience?"
+        question.id = "music_question"
+        const buttons = document.createElement("div")
+        buttons.id = "popupButtons"
+        const yesButton = document.createElement("button")
+        yesButton.type = "button"
+        yesButton.textContent = "Yes"
+        const noButton = document.createElement("button")
+        noButton.type = "button"
+        noButton.textContent = "No"
+        popup.appendChild(question)
+        buttons.appendChild(yesButton)
+        buttons.appendChild(noButton)
+        popup.appendChild(buttons)
+        document.body.appendChild(popup)
+        yesButton.addEventListener("click", () => {
+            sessionStorage.setItem("music", "true")
+            popup.style.display = "none"
+            let music = sessionStorage.getItem("music")
+            if (music === "true") {
+                let bgMusic = new Audio
+                bgMusic.src = "music/bgMusic.mp3"
+                bgMusic.id = "backgroundMusic"
+                bgMusic.loop = true
+                bgMusic.currentTime = startTime || 0
+                bgMusic.volume = 0.4
+                document.body.appendChild(bgMusic)
+                bgMusic.play()
+            }
+        })
+        noButton.addEventListener("click", () => {
+            sessionStorage.setItem("music", "false")
+            popup.style.display = "none"
+        })
+    } else {
+        let bgMusic = new Audio
+        bgMusic.src = "music/bgMusic.mp3"
+        bgMusic.id = "backgroundMusic"
+        bgMusic.loop = true
+        let startTime = sessionStorage.getItem("MusicTime")
+        console.log(startTime)
+        bgMusic.currentTime = startTime || 0
+        bgMusic.volume = 0.4
+        document.body.appendChild(bgMusic)
+        bgMusic.play()
+    }
+})
+
+window.addEventListener("keydown", (e) => {
+    if (e.code === "Space") {
+        let bgMusic = document.getElementById("backgroundMusic")
+        if (bgMusic) {
+            if (!bgMusic.paused) {
+                bgMusic.currentTime = 0
+                bgMusic.pause()
+
+            } else {
+                bgMusic.currentTime = 0
+                bgMusic.play()
+            }
+        } else {
+            let bgMusic = new Audio
+            bgMusic.src = "music/bgMusic.mp3"
+            bgMusic.id = "backgroundMusic"
+            bgMusic.loop = true
+            bgMusic.currentTime = 0
+            bgMusic.volume = 0.4
+            document.body.appendChild(bgMusic)
+            bgMusic.play()
+        }
+    }
+})
+
+const links = document.querySelectorAll("a")
+links.forEach(link => {
+    saveDataToSessionStorage();
+})
+window.addEventListener('beforeunload', () => {
+    saveDataToSessionStorage();
+});
+
+function saveDataToSessionStorage() {
+    let bgMusic = document.getElementById("backgroundMusic")
+    if (bgMusic) {
+        let stopTime = bgMusic.currentTime
+        sessionStorage.setItem("MusicTime", stopTime)
+    }
+}
+
+// #endregion
