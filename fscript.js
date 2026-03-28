@@ -34,6 +34,32 @@ if (music = "true") {
     bgMusic.play()
 }
 
+window.addEventListener("keydown", (e) => {
+    const input = document.getElementById("searchBar")
+    if (e.code === "Space" && document.activeElement !== input) {
+        e.preventDefault()
+        let bgMusic = document.getElementById("backgroundMusic")
+        if (bgMusic) {
+            if (!bgMusic.paused) {
+                bgMusic.currentTime = 0
+                bgMusic.pause()
+
+            } else {
+                bgMusic.currentTime = 0
+                bgMusic.play()
+            }
+        } else {
+            let bgMusic = new Audio
+            bgMusic.src = "music/bgMusic.mp3"
+            bgMusic.id = "backgroundMusic"
+            bgMusic.currentTime = 0
+            bgMusic.volume = 0.4
+            document.body.appendChild(bgMusic)
+            bgMusic.play()
+        }
+    }
+})
+
 
 current.addEventListener('click', (e) => {
     e.preventDefault()
