@@ -70,6 +70,20 @@ colorInput.addEventListener('change', () => {
 // #region Startup
 givenValue = "#1a71ff"
 checkAndCall(givenValue)
+
+let music = sessionStorage.getItem("music")
+if (music = "true") {
+    let bgMusic = new Audio
+    bgMusic.src = "music/bgMusic.mp3"
+    bgMusic.id = "backgroundMusic"
+    bgMusic.loop = true
+    let startTime = sessionStorage.getItem("MusicTime")
+    console.log(startTime)
+    bgMusic.currentTime = startTime || 0
+    bgMusic.volume = 0.4
+    document.body.appendChild(bgMusic)
+    bgMusic.play()
+}
 // #endregion
 
 //#region Gradients
@@ -493,6 +507,46 @@ function checkAndCall(givenValue) {
         CreateGradient("Shades:", hexValuesShade)
         CreateGradient("Tint:", hexValuesTint)
         CreateGradient("Sunset:", hexValuesSunset)
+    }
+}
+
+window.addEventListener("keydown", (e) => {
+    if (e.code = "Space") {
+        let bgMusic = document.getElementById("backgroundMusic")
+        if (bgMusic) {
+            if (!bgMusic.paused) {
+                bgMusic.currentTime = 0
+                bgMusic.pause()
+
+            } else {
+                bgMusic.currentTime = 0
+                bgMusic.play()
+            }
+        } else {
+            let bgMusic = new Audio
+            bgMusic.src = "music/bgMusic.mp3"
+            bgMusic.id = "backgroundMusic"
+            bgMusic.currentTime = 0
+            bgMusic.volume = 0.4
+            document.body.appendChild(bgMusic)
+            bgMusic.play()
+        }
+    }
+})
+
+const links = document.querySelectorAll("a")
+links.forEach(link => {
+    saveDataToSessionStorage();
+})
+window.addEventListener('beforeunload', () => {
+    saveDataToSessionStorage();
+});
+
+function saveDataToSessionStorage() {
+    let bgMusic = document.getElementById("backgroundMusic")
+    if (bgMusic) {
+        let stopTime = bgMusic.currentTime
+        sessionStorage.setItem("MusicTime", stopTime)
     }
 }
 
